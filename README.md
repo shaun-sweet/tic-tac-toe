@@ -1,1 +1,1 @@
-### Tick Tac Toe
+### Tic Tac Toe

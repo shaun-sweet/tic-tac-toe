@@ -1,0 +1,44 @@
+@import reset
+
+body
+  font-family: sans-serif
+
+#root
+  display: flex
+  justify-content: center
+  align-items: center
+
+.board
+  position: relative
+  top: 10em
+  display: flex
+  flex-direction: column
+  height: 400px
+  width: 400px
+
+.s1, .s2, .s3, .s4, .s5, .s6
+  border-bottom: 1px black solid
+.row
+  display: flex
+  flex: 1
+  div
+    flex: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 9em
+    &:first-child
+      border-right: 1px solid black
+    &:last-child
+      border-left: 1px solid black
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.player-piece
+  animation-duration: 1s
+  animation-fill-mode: both
+  animation-name: fadeIn

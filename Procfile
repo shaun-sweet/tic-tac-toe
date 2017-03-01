@@ -1,2 +1,2 @@
-react: npm start
-electron: node src/electron-wait-react
+sass: sass --watch src/styles/stylesheet.sass:src/styles/css/stylesheet.css
+react: react-scripts start
