@@ -42,7 +42,7 @@ export default class Board extends Component {
     );
     return (
       <div className="game-container" >
-        <div className="game-won">{this.state.gameState.won ? <span onClick={this.gameReset.bind(this)}>Game Won!! (tap here to play again)</span> : ""}</div>
+        <div className="game-won">{this.state.gameState.won ? <span onClick={this.gameReset.bind(this)}>Game Won by {this.state.gameState.currentTurn === "X" ? "O's" : "X's"}!! (tap here to play again)</span> : ""}</div>
         <div className='board'>
           {this.state.gameState.won ? <WinLine style={this.mapWinLinePlacement()} /> : null}
           <div className="row">
