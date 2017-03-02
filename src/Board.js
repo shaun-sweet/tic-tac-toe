@@ -9,7 +9,8 @@ export default class Board extends Component {
     this.state = {
       gameState:{
         won: false,
-        currentTurn: "X"
+        currentTurn: "X",
+        cats: false
       },
       boardState:{
         s1: "",
@@ -42,9 +43,9 @@ export default class Board extends Component {
     );
     return (
       <div className="game-container" >
-        <div className="game-won">{this.state.gameState.won ? <span onClick={this.gameReset.bind(this)}>Game Won by {this.state.gameState.currentTurn === "X" ? "O's" : "X's"}!! (tap here to play again)</span> : ""}</div>
-        <div className='board'>
-          {this.state.gameState.won ? <WinLine style={this.mapWinLinePlacement()} /> : null}
+        <div className="game-won">{this.state.gameState.won ? <span onClick={this.gameReset.bind(this)}>Game Won by {this.state.gameState.currentTurn === "X" ? "O's" : "X's"}!! (tap here to play again)</span> : this.state.gameState.cats ? <span onClick={this.gameReset.bind(this)}>Cats Game !! (tap here to play again)</span> : ""}</div>
+          <div className='board'>
+            {this.state.gameState.won ? <WinLine style={this.mapWinLinePlacement()} /> : null}
           <div className="row">
             {space("s1")}
             {space("s2")}
@@ -102,6 +103,10 @@ export default class Board extends Component {
     if (bs.s3 === bs.s6 && bs.s6 === bs.s9 && bs.s3 !== "") {
       this.gameWon('rv')
     }
+    if (bs.s1 !== "" && bs.s2 !== "" && bs.s3 !== "" && bs.s4 !== "" && bs.s5 !== "" && bs.s6 !== "" && bs.s7 !== "" && bs.s8 !== "" && bs.s9 !== "") {
+      this.setState({gameState: {...this.state.gameState, cats: true}})
+    }
+
 
   }
 
