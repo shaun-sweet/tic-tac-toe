@@ -143,30 +143,36 @@ export default class Board extends Component {
     switch (this.state.gameState.winType) {
       case 'lv':
       placement.left = '63px'
+      placement.height = '400px'
       placement.bottom = '0'
       placement.transform = 'none'
         break;
       case 'mv':
+        placement.height = '400px'
         placement.left = '196px'
         placement.bottom = '0'
         placement.transform = 'none'
         break;
       case 'rv':
+        placement.height = '400px'
         placement.left = '329px'
         placement.bottom = '0'
         placement.transform = 'none'
         break;
       case 'mh':
+        placement.height = '400px'
         placement.left = '196px'
         placement.transform = 'rotate(90deg)'
         placement.bottom = '5px'
       break;
       case 'th':
+        placement.height = '400px'
         placement.left = '196px'
         placement.transform = 'rotate(90deg)'
         placement.bottom = '139px'
       break;
       case 'bh':
+        placement.height = '400px'
         placement.left = '196px'
         placement.transform = 'rotate(90deg)'
         placement.top = '128px'
